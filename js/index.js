@@ -13,4 +13,24 @@ Implement the following functionality:
 
 const firstInput = document.querySelector("[data-js=first-input]");
 const secondInput = document.querySelector("[data-js=second-input]");
-const button = document.querySelector("[data-js=button]");
+const copyButton = document.querySelector("[data-js=copy-button]");
+const upercaseButton = document.querySelector("[data-js=uppercase-button]");
+const switchButton = document.querySelector('[data-js="button-switch"]');
+
+copyButton.addEventListener("click", () => {
+  secondInput.value = firstInput.value;
+  console.log("Copied that!");
+});
+
+upercaseButton.addEventListener("click", () => {
+  secondInput.value = firstInput.value.toUpperCase();
+  console.log("Prettier!");
+});
+
+switchButton.addEventListener("click", () => {
+  const zwischenAblage1 = firstInput.value;
+  const zwischenAblage2 = secondInput.value;
+  firstInput.value = zwischenAblage2;
+  secondInput.value = zwischenAblage1;
+  console.log("Switched!");
+});
